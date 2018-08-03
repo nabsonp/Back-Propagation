@@ -1,0 +1,62 @@
+//
+//  NeuronLayer.cpp
+//  Back-Propagation
+//
+//  Created by Nabson Paiva on 02/08/18.
+//  Copyright © 2018 Nabson Paiva. All rights reserved.
+//
+
+#include "NeuronLayer.hpp"
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+
+NeuronLayer::NeuronLayer(int num_neurons, double bias){
+    // CHECAR A COISA DO NONE
+    if (!bias) {
+        srand((unsigned int)time(NULL));
+        this->bias = (double) ((rand()%10)/10);
+    } else {
+        this->bias = bias;
+    }
+    neurons = std::vector<Neuron>();
+    for (int i = 0; i < num_neurons; i++){
+        neurons.push_back(Neuron(this->bias));
+    }
+}
+
+void NeuronLayer::inspect(){
+    std::cout << "Neurons: " << neurons.size() << "\n";
+    for (int n = 0; n < neurons.size(); n++){
+        std::cout << "Neuron " << n << "\n";
+        for (int w = 0; w < neurons[n].weights.size(); w++) {
+            std::cout << " Weight: " << neurons[n].weights[w];
+        }
+        std::cout << "  Bias: " << bias << "\n";
+    }
+}
+
+std::vector<double> NeuronLayer::feed_forward(std::vector<double> inputs){
+    std::vector<double> outputs = std::vector<double>();
+    for (Neuron neuron : neurons) {
+        outputs.push_back(neuron.calculate_output(inputs));
+    }
+    return outputs;
+}
+
+std::vector<double> NeuronLayer::get_outputs(){
+    std::vector<double> outputs = std::vector<double>();
+    for (Neuron neuron : neurons){
+        outputs.push_back(neuron.output);
+    }
+    return outputs;
+}
+
+
+
+
+
+
+
+
+
