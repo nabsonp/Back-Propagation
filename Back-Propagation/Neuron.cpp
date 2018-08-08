@@ -37,10 +37,10 @@ double Neuron::calculate_pd_error_wrt_total_net_input(double target_output){
 }
 
 double Neuron::calculate_error(double target_output){
-    //printf("Target_output: %lf \n",target_output);
-    //printf("Saída do neuronio: %lf \n",output);
-    //printf("Erro parcial: %lf \n",(pow((target_output - output),2)/2.0));
-    return 0.5*pow((target_output - output),2);
+    //printf("\n\tTarget_output: %lf \n",target_output);
+    //printf("\n\tSaída do neuronio: %lf \n",output);
+    //printf("\n\tErro parcial: %lf \n",(pow((target_output - output),2)/2.0));
+    return 0.5 * pow((target_output - output),2);
 }
 
 double Neuron::calculate_pd_error_wrt_output(double target_output){
