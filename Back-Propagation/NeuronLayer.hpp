@@ -17,6 +17,9 @@ class NeuronLayer {
         double bias;
         std::vector<Neuron> neurons;
         NeuronLayer(int num_neurons, double bias);
+        NeuronLayer();
+        void criaNeuronios(int num_neurons);
+        void setBias(double bias);
         void inspect();
         std::vector<double> feed_forward(std::vector<double> inputs);
         std::vector<double> get_outputs();

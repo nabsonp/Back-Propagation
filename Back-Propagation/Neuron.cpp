@@ -7,13 +7,16 @@
 //
 #include <math.h>
 #include "Neuron.hpp"
+using namespace std;
+
 Neuron::Neuron(double b){
     bias = b;
-    weights = std::vector<double>();;
+    weights = vector<double>();
 }
-double Neuron::calculate_output(std::vector<double> inputs){
+double Neuron::calculate_output(vector<double> inputs){
     this->inputs = inputs;
     this->output = this->squash(this->calculate_total_net_input());
+    //printf("\n Saída do neuronio: %lf ",output);
     return output;
 }
 
@@ -34,11 +37,14 @@ double Neuron::calculate_pd_error_wrt_total_net_input(double target_output){
 }
 
 double Neuron::calculate_error(double target_output){
-    return 0.5 * pow((target_output - output),2);
+    //printf("Target_output: %lf \n",target_output);
+    //printf("Saída do neuronio: %lf \n",output);
+    //printf("Erro parcial: %lf \n",(pow((target_output - output),2)/2.0));
+    return 0.5*pow((target_output - output),2);
 }
 
 double Neuron::calculate_pd_error_wrt_output(double target_output){
-    return -(target_output - output);
+    return (output - target_output);
 }
 
 double Neuron::calculate_pd_total_net_input_wrt_input(){
@@ -46,7 +52,7 @@ double Neuron::calculate_pd_total_net_input_wrt_input(){
 }
 
 double Neuron::calculate_pd_total_net_input_wrt_weight(int index){
-    return inputs[index];
+    return this->inputs[index];
 }
 
 

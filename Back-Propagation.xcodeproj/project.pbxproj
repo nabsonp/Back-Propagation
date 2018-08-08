@@ -67,7 +67,7 @@
 		FA6B238821134E87000ADB96 /* Back-Propagation */ = {
 			isa = PBXGroup;
 			children = (
-				FA6B239321135143000ADB96 /* Back-propagation.py */,
+				FAC5DB622116017A00CE32CA /* New Group */,
 				FA6B238921134E87000ADB96 /* main.cpp */,
 				FA6B239021134EEB000ADB96 /* Neuron.cpp */,
 				FA6B239121134EEB000ADB96 /* Neuron.hpp */,
@@ -77,6 +77,14 @@
 				FA45785D2113750A00EB8334 /* NeuralNetwork.hpp */,
 			);
 			path = "Back-Propagation";
+			sourceTree = "<group>";
+		};
+		FAC5DB622116017A00CE32CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B239321135143000ADB96 /* Back-propagation.py */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

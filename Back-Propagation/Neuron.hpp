@@ -11,13 +11,15 @@
 
 #include <stdio.h>
 #include <vector>
+using namespace std;
+
 class Neuron{
     public:
         double bias, output;
-        std::vector<double> weights;
-        std::vector<double> inputs;
+        vector<double> weights;
+        vector<double> inputs;
         Neuron(double bias);
-        double calculate_output(std::vector<double> inputs);
+        double calculate_output(vector<double> inputs);
         double squash(double total_net_input);
         double calculate_total_net_input();
         double calculate_error(double target_output);
