@@ -31,14 +31,11 @@ int main(int argc, const char * argv[]) {
     vector<vector<double> > treino;
     treino.push_back(entrada);
     treino.push_back(esperado);
-    for (int i = 0; i < 10; i++) {
-        //cout<<"\niniciei\n";
+    for (int i = 0; i < 10000; i++) {
         nn->train(entrada, esperado);
-        //cout<<"\ntreinei\n";
         cout.precision(9);
         cout.setf(ios::fixed);
         cout << i << "  " << nn->calculate_total_error(treino) << "\n	";
-        //tá imprimindo o dobro sabe deus pq
     }
     return 0;
 }

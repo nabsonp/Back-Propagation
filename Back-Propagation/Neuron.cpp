@@ -16,7 +16,6 @@ Neuron::Neuron(double b){
 double Neuron::calculate_output(vector<double> inputs){
     this->inputs = inputs;
     this->output = this->squash(this->calculate_total_net_input());
-    //printf("\n Saída do neuronio: %lf ",output);
     return output;
 }
 
@@ -37,9 +36,6 @@ double Neuron::calculate_pd_error_wrt_total_net_input(double target_output){
 }
 
 double Neuron::calculate_error(double target_output){
-    //printf("\n\tTarget_output: %lf \n",target_output);
-    //printf("\n\tSaída do neuronio: %lf \n",output);
-    //printf("\n\tErro parcial: %lf \n",(pow((target_output - output),2)/2.0));
     return 0.5 * pow((target_output - output),2);
 }
 

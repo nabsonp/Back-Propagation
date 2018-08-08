@@ -132,8 +132,6 @@ double NeuralNetwork::calculate_total_error(std::vector<std::vector<double> > tr
 {
     double total_error = 0;
     vector<double> training_inputs, training_outputs;
-    //for(int i = 0; i < (training_sets).size(); i++)
-    //{
         training_inputs = training_sets[0];
         training_outputs = training_sets[1];
         feed_forward(training_inputs);
@@ -141,7 +139,6 @@ double NeuralNetwork::calculate_total_error(std::vector<std::vector<double> > tr
         {
             total_error += output_layer.neurons[j].calculate_error(training_outputs[j]);
         }
-    //}
     return total_error;
 }
 

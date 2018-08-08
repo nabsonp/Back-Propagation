@@ -28,7 +28,7 @@ void NeuronLayer::setBias(double bias){
 }
 
 NeuronLayer::NeuronLayer(int num_neurons, double bias){
-    // CHECAR A COISA DO NONE
+    // CHECAR A COISA DO NONE, QUE É QUANDO NAO É PASSADO UM VIÉS
     if (!bias) {
         srand((unsigned int)time(NULL));
         this->bias = (double) ((rand()%10)/10);
